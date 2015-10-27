@@ -1,0 +1,5 @@
+<% if listener_signed_in? %>
+      <%= link_to "Listener Sign Out", destroy_listener_session_path, :method => :delete %>
+    <% else %>
+      <%=link_to "Listener Sign In", new_listener_session_path %></li>
+    <% end %>

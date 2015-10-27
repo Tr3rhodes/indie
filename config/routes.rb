@@ -1,9 +1,21 @@
 Rails.application.routes.draw do
+
+  get 'songs/index'
+
+  get 'songs/upload'
+
+  get 'songs/delete'
+
+  devise_for :artists
+  devise_for :listeners
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'welcome#index'
+
+  resources :artists
+  resources :listeners
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

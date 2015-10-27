@@ -1,0 +1,35 @@
+<% if listener_signed_in? %>
+  <p id="notice"><%= notice %></p>
+
+  <h1>Listing Listeners</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Email</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @listeners.each do |listener| %>
+        <tr>
+          <td><%= listener.first_name %></td>
+          <td><%= listener.last_name %></td>
+          <td><%= listener.email %></td>
+          <td><%= link_to 'Show', listener %></td>
+          <td><%= link_to 'Edit', edit_listener_path(listener) %></td>
+          <td><%= link_to 'Destroy', listener, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to 'New Listener', new_listener_path %>
+<% else %>
+  <%= render 'welcome' %>
+<% end %>
