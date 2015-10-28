@@ -1,0 +1,8 @@
+<nav class="navbar navbar-default navbar-sticky">
+  <% if listener_signed_in? %>
+  <li><%= link_to "Listener Logout", destroy_listener_session_path, :method => :delete %></li>
+  <% end %>
+  <% if artist_signed_in? %>
+  <li><%= link_to "Artist Logout", destroy_artist_session_path, :method => :delete %></li>
+  <% end %>
+</nav>

@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   get 'songs/delete'
 
-  devise_for :artists
+  devise_for :artists 
   devise_for :listeners
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -16,6 +16,15 @@ Rails.application.routes.draw do
 
   resources :artists
   resources :listeners
+
+  # authenticated :artists do
+  #   root :as => "artist"
+  # end
+  #
+  # authenticated :listeners do
+  #   root :as => "listener"
+  # end
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
